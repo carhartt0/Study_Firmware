@@ -23,7 +23,7 @@ int main()
 	Lcd_Clear();
 	//LcdInit_4bit();
 	
-	char temp[256];
+	Byte temp[30] = "";
 	int i,j,res;
 	
 	
@@ -35,12 +35,13 @@ int main()
 			{
 				res = i*j;
 				sprintf	(temp, "%d x %d = %d",i, j, res);
+				Lcd_Pos(0, 0);
+				Lcd_STR(temp);
+				_delay_ms(1000);
 			}
 		}
-		Byte *str3 = temp[256];
 		
-			Lcd_Pos(0, 0);
-			Lcd_STR(str3);
+			
 			//Lcd_Pos(1, 0);
 			//Lcd_STR(str2);
 	}
